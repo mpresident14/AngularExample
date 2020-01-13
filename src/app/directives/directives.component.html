@@ -1,0 +1,23 @@
+<h1>Directives</h1>
+
+<!--ngIf-->
+<p *ngIf="flag">Flag is set.</p>
+<p *ngIf="!flag">Flag is not set.</p>
+<button (click)="toggleFlag()">Toggle Flag</button>
+
+<!--ngIf else, ngStyle-->
+<div [ngStyle]="{color: colors[colorIndex]}">
+    <p *ngIf="colors[colorIndex] === 'green'; else elseblock">This color is green.</p>
+    <ng-template #elseblock>
+        <p>This color is not green.</p>
+    </ng-template>
+</div>
+<button (click)="changeColor()">Change Text Color</button>
+
+<!--ngClass-->
+<p [ngClass]="{myStyle: flag}">Class styling will be applied here if flag is set.</p>
+
+<!--ngFor-->
+<input type="text" placeholder="Enter grocery item." [(ngModel)]="currentGrocery">
+<button (click)="addGroceryItem()">Add Grocery</button>
+<li *ngFor="let groceries of groceryList">{{ groceries }}</li>
