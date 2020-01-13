@@ -1,0 +1,14 @@
+<!--String interpolation-->
+<h2>{{ greeting }}, this is Bootstrap <code>code font</code> from the server component.</h2>
+<!--Event binding-->
+<button (click)="toggleHideButton()">Show button</button>
+<!--Property binding-->
+<button [hidden]="buttonHidden" (click)="changeText()">Change Text</button>
+<!--
+    2-way binding:
+    When data in the model changes, the view reflects the change.
+    When data in the view changes, the model is updated as well.
+-->
+<br/><label for="name">Username:</label>
+<br/><input type="text" name="name" [(ngModel)]="username">
+<p>Hello, {{ username }}</p>
