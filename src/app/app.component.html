@@ -1,16 +1,31 @@
-<p>
-  <!-- Bootstrap <abbr> tag -->
-  The <abbr title="National Football League">NFL</abbr> is my favorite
-  sport to watch.
-</p>
+<div class="box">
+  <h1>Bootstrap examples</h1>
+  <p>
+    <!-- Bootstrap <abbr> tag -->
+    The <abbr title="National Football League">NFL</abbr> is my favorite
+    sport to watch.
+  </p>
 
-<!-- Bootstrap .btn-group class -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Apple</button>
-  <button type="button" class="btn btn-primary">Samsung</button>
-  <button type="button" class="btn btn-primary">Sony</button>
+  <!-- Bootstrap .btn-group class -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
 </div>
 
+
 <!--"Import" other components' html-->
-<app-databinding></app-databinding>
-<app-directives></app-directives>
+<div class="box">
+  <app-databinding></app-databinding>
+</div>
+
+<div class="box">
+  <app-directives></app-directives>
+</div>
+
+<div class="box">
+  <!-- Custom property and event binding -->
+  <app-note-input (noteAdded)="onNoteAdded($event)"></app-note-input>
+  <app-note *ngFor="let note of notes" [noteText]="note"></app-note>
+</div>

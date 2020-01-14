@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DataBinding } from './databinding/databinding.component';
+import { DataBindingComponent } from './databinding/databinding.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { NoteComponent } from './note/note.component';
+import { NoteInputComponent } from './note-input/note-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataBinding,
-    DirectivesComponent
+    DataBindingComponent,
+    DirectivesComponent,
+    NoteComponent,
+    NoteInputComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-databinding',
     templateUrl: './databinding.component.html'
 })
-export class DataBinding {
+export class DataBindingComponent {
     buttonHidden : boolean = true;
     greeting : string = "Hello";
     username : string = "World";
