@@ -7,6 +7,7 @@ import { DataBindingComponent } from './databinding/databinding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NoteComponent } from './note/note.component';
 import { NoteInputComponent } from './note-input/note-input.component';
+import { ExampleDirective } from './directives/example.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NoteInputComponent } from './note-input/note-input.component';
     DataBindingComponent,
     DirectivesComponent,
     NoteComponent,
-    NoteInputComponent
+    NoteInputComponent,
+    ExampleDirective
   ],
   imports: [
     BrowserModule,

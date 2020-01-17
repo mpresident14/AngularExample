@@ -1,6 +1,4 @@
 <h1>Data Binding</h1>
-<!--String interpolation-->
-<h2>{{ greeting }}, this is Bootstrap <code>code font</code> from the data binding component.</h2>
 <!--Event binding-->
 <button (click)="toggleHideButton()">Show button</button>
 <!--Property binding-->
@@ -12,4 +10,13 @@
 -->
 <br/><label for="name">Username:</label>
 <br/><input type="text" name="name" [(ngModel)]="username">
+<!--String interpolation-->
 <p>Hello, {{ username }}</p>
+<!-- Pipes https://angular.io/guide/pipes -->
+<p>Hello, {{ username | uppercase }}</p>
+<p>Hello, {{ username | slice:2:4 }}</p>
+<!-- Number pipe: First # represents min integer digits. 
+    Last two are range of the # of decimal digits -->
+<p>{{ 4.323 | number:'1.1-2' }}</p>
+<p>{{ 4.323 | number:'1.2-3' }}</p>
+<p>{{ 4.323 | number:'2.4-5' }}</p>

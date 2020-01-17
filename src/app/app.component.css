@@ -4,3 +4,10 @@
     border-style: solid;
     border-color: black;
 }
+
+/* Modify Bootstrap */
+.btn-primary {
+    background-color: darksalmon;
+    color: blue;
+    border-color: blue;
+}

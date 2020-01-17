@@ -22,3 +22,6 @@
 <input type="text" placeholder="Enter grocery item." [(ngModel)]="currentGrocery">
 <button (click)="addGroceryItem()">Add Grocery</button>
 <li *ngFor="let groceries of groceryList">{{ groceries }}</li>
+
+<!-- Custom directive -->
+<p appExample>Custom directive example</p>
