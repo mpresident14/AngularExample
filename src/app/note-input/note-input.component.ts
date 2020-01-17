@@ -1,24 +1,26 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Note } from '../app.component';
 
 @Component({
   selector: 'app-note-input',
   templateUrl: './note-input.component.html',
   styleUrls: ['./note-input.component.css']
 })
-export class NoteInputComponent implements OnInit {
+export class NoteInputComponent {
 
-  currentNote : string = "";
   // @Output allows us "noteAdded" to send data to a parent component (AppComponent)
-  @Output() noteAdded = new EventEmitter<string>();
+  @Output() noteAdded = new EventEmitter<Note>();
+  // @ViewChild gets a local reference in TypeScript
+  @ViewChild("nameElement", {static : false}) noteNameElement : ElementRef;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  onNoteAdded() : void {
-    this.noteAdded.emit(this.currentNote);
-    this.currentNote = "";
+  onNoteAdded(noteElement: HTMLInputElement) : void {
+    this.noteAdded.emit({
+      name: this.noteNameElement.nativeElement.value, 
+      text: noteElement.value
+    });
+    
+    this.noteNameElement.nativeElement.value = "";
+    noteElement.value = "";
   }
 
 }

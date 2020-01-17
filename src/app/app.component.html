@@ -12,6 +12,12 @@
     <button type="button" class="btn btn-primary">Samsung</button>
     <button type="button" class="btn btn-primary">Sony</button>
   </div>
+
+  <ul class="list-group" style="margin-top: 10px" (click)="onItemClicked($event)">
+    <li class="list-group-item active" #firstItem>First item</li>
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+  </ul>
 </div>
 
 
@@ -25,7 +31,16 @@
 </div>
 
 <div class="box">
-  <!-- Custom property and event binding -->
+  <!-- Custom property and event binding
+    Local references and @ViewChild -->
   <app-note-input (noteAdded)="onNoteAdded($event)"></app-note-input>
-  <app-note *ngFor="let note of notes" [noteText]="note"></app-note>
+  <app-note *ngFor="let note of notes" [name]="note.name" [text]="note.text">
+    <!-- <ng-content> tag in note.component.html allows us to insert this -->
+    <!-- The select attribute in the <ng-content> tag means only tags with this attribute
+      will be inserted. -->
+    <!-- For more, see https://scotch.io/tutorials/angular-2-transclusion-using-ng-content -->
+    <!-- FYI: <span> is <p> w/o line break -->
+    <span note-separator>: </span>
+    <span>--</span> <!-- This is ignored b/c it doesn't have a note-separator attribute -->
+  </app-note>
 </div>

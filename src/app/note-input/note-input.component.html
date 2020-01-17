@@ -1,3 +1,5 @@
 <h1>Custom Property and Event Binding</h1>
-<input type="text" placeholder="Enter note" [(ngModel)]="currentNote">
-<button type="button" (click)="onNoteAdded()">Add Note</button>
+<input type="text" placeholder="Enter name" #nameElement>
+<!-- #noteElement is a local reference to the html object -->
+<input type="text" placeholder="Enter note" #noteElement>
+<button type="button" (click)="onNoteAdded(noteElement)">Add Note</button>
