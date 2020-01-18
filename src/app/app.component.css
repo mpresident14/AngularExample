@@ -8,6 +8,6 @@
 /* Modify Bootstrap */
 .btn-primary {
     background-color: darksalmon;
-    color: blue;
-    border-color: blue;
+    color: rgb(67, 126, 185);
+    border-color: rgb(67, 126, 185);
 }
