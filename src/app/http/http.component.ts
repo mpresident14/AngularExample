@@ -9,11 +9,14 @@ import { HttpService } from './http.service';
 export class HttpComponent implements OnInit {
 
   info: string;
+  errorMsg: string;
   // Using "private" (or any other parameter property) automatically initializes the member variable
   // See https://www.typescriptlang.org/docs/handbook/classes.html#parameter-properties
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getInfo().subscribe(data => this.info = data);
+    this.httpService.getInfo().subscribe(
+      (data : string) => this.info = data,
+      (error : string) => this.errorMsg = error);
   }
 }

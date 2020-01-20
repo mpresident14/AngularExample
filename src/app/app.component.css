@@ -5,9 +5,14 @@
     border-color: black;
 }
 
-/* Modify Bootstrap */
-.btn-primary {
-    background-color: darksalmon;
+/* Demonstrate @extend from Sass */
+.base-class {
     color: rgb(67, 126, 185);
     border-color: rgb(67, 126, 185);
+}
+
+/* Modify Bootstrap */
+.btn-primary {
+    @extend .base-class;
+    background-color: darksalmon;
 }

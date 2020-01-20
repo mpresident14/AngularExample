@@ -11,6 +11,13 @@ import { NoteInputComponent } from './note-input/note-input.component';
 import { ExampleDirective } from './directives/example.directive';
 import { HttpComponent } from './http/http.component';
 import { HttpService } from './http/http.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RoutingComponent } from './routing/routing.component';
+import { HelloComponent } from './routing/hello/hello.component';
+import { GoodbyeComponent } from './routing/goodbye/goodbye.component';
+import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
+import { HelloNameComponent } from './routing/hello-name/hello-name.component';
+import { ChildRoutingComponent } from './routing/child-routing/child-routing.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +27,19 @@ import { HttpService } from './http/http.service';
     NoteComponent,
     NoteInputComponent,
     ExampleDirective,
-    HttpComponent
+    HttpComponent,
+    RoutingComponent,
+    HelloComponent,
+    GoodbyeComponent,
+    PageNotFoundComponent,
+    HelloNameComponent,
+    ChildRoutingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent] // Start with AppComponent
